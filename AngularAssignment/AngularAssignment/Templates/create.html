@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <link href="Style.css" rel="stylesheet" />
+    <script src="Scripts/Script.js"></script>
+</head>
+<body>
+
+    <h2>Creat New</h2>
+    <!--include the name of our module and we create a validate controller to check the 
+        inout that users enter, later the submitted result will be saved and send to sendform()-->
+    <form ng-app="Demo" ng-createController="validateCtrl"
+          name="myForm" novalidate ng-submit="sendform()">
+        <p>
+            First name:<br>
+            <!--create an input and check its validity--> 
+            <input type="text" name="Firstname" ng-model="form.Firstname" placeholder="enter your first name here" ng-required="true" ng-maxlength="10">
+            <!--if it is not valid it will show these errors-->
+            <span style="color:red" ng-show="myForm.Firstname.$touched && myForm.Firstname.$invalid">
+                <span ng-show="myForm.Firstname.$error.required">First name is required.</span>
+            </span>
+            <span style="color:red" class="error" ng-show="myForm.Firstname.$error.maxlength">
+                Too long!
+            </span>
+        </p>
+        <p>
+            Last name:<br>
+            <input type="text" name="Lastname" ng-model="form.Lastname" placeholder="enter your last name here" ng-required="true" ng-maxlength="10">
+            <span style="color:red" ng-show="myForm.Lastname.$touched && myForm.Lastname.$invalid">
+                <span ng-show="myForm.Lastname.$error.required">Last name is required.</span>
+            </span>
+            <span style="color:red" class="error" ng-show="myForm.Lastname.$error.maxlength">
+                Too long!
+            </span>
+        </p>
+        <p>
+            Country:<br>
+            <select name="ct" ng-model="form.country" ng-options="item for item in countries" ng-required="true">
+                <option value="">choose country</option>
+            </select>
+            <span style="color:red" ng-show="myForm.ct.$touched && myForm.ct.$invalid">
+                the country is required!
+            </span>
+
+        </p>
+        <p>
+            <!--the submitt button will be disable untill all form is filled properly-->
+            <button type="submit"
+                    ng-disabled="myForm.$invalid">
+                Submit
+            </button>
+        </p>
+    </form>
+</body>
+</html>
+
+<script>
+
+</script>

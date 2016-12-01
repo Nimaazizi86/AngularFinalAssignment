@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AngularAssignment.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+<html ng-app="Demo">
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <link href="Style.css" rel="stylesheet" />
+    <script src="Scripts/Script.js"></script>
+</head>
+<body>
+    <p>
+        <a href="#/create">create</a>
+    </p>
+    <table class="table">
+        <tr>
+            @*by Html.DisplayNameFor we define the name for a variable to get apear on the screen, model is the course table*@
+            <th>
+                Id
+            </th>
+            <th>
+                Firs Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Country
+            </th>
+
+            <th></th>
+        </tr>
+        @*create one foreach to get into the items in course table, by Html.DisplayFor we shows the values of the variables*@
+
+            <tr ng-repeat="person in Person">
+                <td>
+                    {{ Person.ID }}
+                </td>
+                <td>
+                    {{ Person.Firstname }}
+                </td>
+                <td>
+                    {{ Person.Lastname }}
+                </td>
+                <td>
+                    {{ Person.Country }}
+                </td>
+
+                <td>
+                    <a href="#/detail">detail</a>
+                    <a href="#/edit">edit</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
+

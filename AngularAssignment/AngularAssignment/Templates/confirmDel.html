@@ -1,0 +1,26 @@
+﻿<h1>{{ delmessage }}</h1>
+<h1>Are you sure you want to delet this person with following details:</h1>
+
+<table>
+    <tr>
+        <td>ID:</td>
+        <td>{{detail.ID}}</td>
+    </tr>
+    <tr>
+        <td>First Name:</td>
+        <td>{{detail.Firstname}}</td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td>{{detail.Lastname}}</td>
+    </tr>
+    <tr>
+        <td>Country</td>
+        <td>{{detail.country}}</td>
+    </tr>
+</table>
+
+<a href="#/deleteCoinfirmed/{{ detail.ID }}" class="btn btn-danger">delete</a>
+<a href="#/list">back to list</a>
+
+    

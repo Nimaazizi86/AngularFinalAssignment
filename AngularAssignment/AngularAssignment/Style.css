@@ -1,0 +1,29 @@
+﻿.header {
+    width:800px;
+    height:80px;
+    text-align:center;
+    background-color:aliceblue;
+}
+
+.footer{
+    background-color:aliceblue;
+    text-align:center;
+}
+
+.leftMenu {
+    height:500px;
+    background-color:antiquewhite;
+    width:150px;
+}
+
+.mainContent
+{
+    height:500px;
+    background-color:aliceblue;
+    width:650px;
+}
+
+a{
+    display:block;
+    padding:5px;
+}

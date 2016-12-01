@@ -1,0 +1,43 @@
+﻿
+
+
+<form ng-app="Demo" ng-createController="validateCtrl"
+      name="myForm" novalidate ng-submit="sendform()">
+    <!--the only differnet between edit and create is we dont need to edit the id but we have to put it here bcoz we 
+    have to send it to the method in order to find with peron has to be modified--> 
+    <p>
+        ID:
+        <span ng-model="detailToEdit.ID">{{ detailToEdit.ID }}</span>            
+    </p>
+
+    <p>
+        First name:<br>
+        <input type="text" name="Firstname" ng-model="detailToEdit.Firstname" ng-required="true" ng-maxlength="10">
+        <span style="color:red" ng-show="myForm.Firstname.$dirty && myForm.Firstname.$invalid">
+            <span ng-show="myForm.Firstname.$error.required">First name is required.</span>
+        </span>
+    </p>
+    <p>
+        Last name:<br>
+        <input type="text" value="Lastname" name="Lastname" ng-model="detailToEdit.Lastname" ng-required="true" ng-maxlength="10">
+        <span style="color:red" ng-show="myForm.Lastname.$dirty && myForm.Lastname.$invalid">
+            <span ng-show="myForm.Lastname.$error.required">Last name is required.</span>
+        </span>
+    </p>
+    <p>
+        Country:<br>
+        <select name="ct" ng-model="detailToEdit.country" ng-options="item for item in countriesEdit" ng-required="true">
+            <option value="">choose country</option>
+        </select>
+        <span style="color:red" ng-show="myForm.ct.$touched && myForm.ct.$invalid">
+            the country is required!
+        </span>
+    </p>
+    <p>
+        <button type="submit"
+                ng-disabled="myForm.$invalid">
+            Save
+        </button>
+    </p>
+</form>
+<a href="#/list">back to list</a>
